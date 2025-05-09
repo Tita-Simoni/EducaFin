@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard Financeiro</h1>
+    <nav>
+      <a href="index.html">Dashboard</a> |
+      <a href="pages/cadastro.html">Cadastrar</a> |
+      <a href="pages/metas.html">Metas</a> |
+      <a href="pages/calculadora.html">Calculadora</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Resumo</h2>
+    <p>Total Receitas: R$ <span id="totalReceitas">0.00</span></p>
+    <p>Total Despesas: R$ <span id="totalDespesas">0.00</span></p>
+    <p>Saldo: R$ <span id="saldo">0.00</span></p>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    exibirResumo();
+  </script>
+</body>
+</html>
