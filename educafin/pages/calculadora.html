@@ -9,35 +9,38 @@
   <header>
     <h1>Cadastrar Transações</h1>
     <nav>
-      <a href="index.html">Dashboard</a> |
+      <a href="../index.html">Dashboard</a> |
       <a href="cadastro.html">Cadastrar</a> |
       <a href="metas.html">Metas</a> |
       <a href="calculadora.html">Calculadora</a>
     </nav>
   </header>
 
-  <form id="formJuros" class="formJuros">
-      <label for="valorInicial">Valor Inicial (R$):</label>
-      <input type="number" id="valorInicial" required step="0.01">
+  <main class="main-form">
+    <div class="form-container">
+      <form id="formJuros">
+        <label for="valorInicial">Valor Inicial (R$):</label>
+        <input type="number" id="valorInicial" required step="0.01">
+    
+        <label for="taxa">Taxa de Juros (%):</label>
+        <input type="number" id="taxa" required step="0.01">
+    
+        <label for="periodos">Número de Períodos:</label>
+        <input type="number" id="periodos" required>
+    
+        <label for="tipoJuros">Tipo de Juros:</label>
+        <select id="tipoJuros">
+          <option value="simples">Simples</option>
+          <option value="composto">Composto</option>
+        </select>
 
-      <label for="taxa">Taxa de Juros (%):</label>
-      <input type="number" id="taxa" required step="0.01">
+        <button type="submit">Calcular</button>
 
-      <label for="periodos">Número de Períodos:</label>
-      <input type="number" id="periodos" required>
-
-      <label for="tipoJuros">Tipo de Juros:</label>
-      <select id="tipoJuros">
-        <option value="simples">Simples</option>
-        <option value="composto">Composto</option>
-      </select>
-
-      <button type="submit">Calcular</button>
-    </form>
-
-    <section id="resultado" style="margin-top: 20px;"></section>
+        </form>
+    </div>
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
+
 </body>
 </html>
