@@ -9,46 +9,55 @@
   <header>
     <h1>Cadastrar Transações</h1>
     <nav>
-      <a href="index.html">Dashboard</a> |
+      <a href="../index.html">Dashboard</a> |
       <a href="cadastro.html">Cadastrar</a> |
       <a href="metas.html">Metas</a> |
       <a href="calculadora.html">Calculadora</a>
     </nav>
   </header>
 
-  <main>
-    <form onsubmit="salvarTransacao(event)">
-      <label>Tipo:</label>
-      <select id="tipo">
-        <option value="receita">Receita</option>
-        <option value="despesa">Despesa</option>
-      </select>
+  <div id="mensagem" class="mensagem-sucesso" style="display: none;"></div>
 
-      <label>Categoria:</label>
-      <select id="categoria">
-        <option>Alimentação</option>
-        <option>Transporte</option>
-        <option>Educação</option>
-        <option>Contas casa - aluguel, água, luz, condomínio, etc. </option>
-        <option>Compras</option>
-        <option>Lazer</option>
-        <option>Saúde</option>
-        <option>Assinaturas - Netflix, Spotify, etc. </option>
-        <option>Cartão de crédito</option>
-        <option>Outro</option>
-      </select>
+  <main class="main-form">
+    <div class="form-container">
 
-      <label>Descrição:</label>
-      <input type="text" class="descricao" required>
-
-      <label>Valor (R$):</label>
-      <input type="number" id="valor" required step="0.01">
-
-      <button type="submit">Salvar</button>
-
-    </form>
+      <form onsubmit="salvarTransacao(event)">
+        <label>Tipo:</label>
+        <select id="tipo">
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+  
+        <label>Categoria:</label>
+        <select id="categoria">
+          <option>Receita</option>
+          <option>Alimentação</option>
+          <option>Transporte</option>
+          <option>Educação</option>
+          <option>Contas casa - aluguel, água, luz, condomínio, etc. </option>
+          <option>Compras</option>
+          <option>Lazer</option>
+          <option>Saúde</option>
+          <option>Assinaturas - Netflix, Spotify, etc. </option>
+          <option>Cartão de crédito</option>
+          <option>Outro</option>
+        </select>
+  
+        <label>Descrição:</label>
+        <input type="text" id="descricao" class="descricao" required>
+  
+        <label>Data:</label>
+        <input type="date" id="data" required>
+  
+        <label>Valor (R$):</label>
+        <input type="number" id="valor" required step="0.01">
+  
+        <button type="submit">Salvar</button>
+  
+      </form>
+    </div>
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

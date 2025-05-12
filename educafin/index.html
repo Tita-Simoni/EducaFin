@@ -16,11 +16,22 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main-dashboard">
     <h2>Resumo</h2>
-    <p>Total Receitas: R$ <span id="totalReceitas">0.00</span></p>
-    <p>Total Despesas: R$ <span id="totalDespesas">0.00</span></p>
-    <p>Saldo: R$ <span id="saldo">0.00</span></p>
+    <div class="resumo-container">
+      <div class="card">
+        <h3>Total Receitas</h3>
+        <p>R$ <span id="totalReceitas">0.00</span></p>        
+      </div>
+      <div class="card">
+        <h3>Total Despesas</h3>
+        <p>R$ <span id="totalDespesas">0.00</span></p>
+      </div>
+      <div class="card">
+        <h3>Saldo</h3>
+        <p>R$ <span id="saldo">0.00</span></p>
+      </div>
+    </div>
   </main>
 
   <script src="js/script.js"></script>

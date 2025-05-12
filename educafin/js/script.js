@@ -1,16 +1,19 @@
 // Salvar receita ou despesa
 function salvarTransacao(event) {
     event.preventDefault();
+    console.log("Função salvarTransacao foi chamada!");
   
     const tipo = document.getElementById("tipo").value;
     const categoria = document.getElementById("categoria").value;
     const descricao = document.getElementById("descricao").value;
+    const data = document.getElementById("data").value;
     const valor = parseFloat(document.getElementById("valor").value);
   
     const transacao = { 
       tipo, 
       categoria, 
       descricao, 
+      data,
       valor,
       data: new Date().toISOString()
     };
@@ -19,8 +22,14 @@ function salvarTransacao(event) {
     transacoes.push(transacao);
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
   
-    alert("Transação salva com sucesso!");
-    event.target.reset();
+    const msg = document.getElementById("mensagem");
+    msg.textContent = "Transação salva com sucesso!";
+    msg.style.display = "block";
+
+    setTimeout(() => {
+      msg.style.display = "none"; 
+    }, 3000);
+
   }
   
   // Exibir total
@@ -47,10 +56,18 @@ function salvarTransacao(event) {
     event.preventDefault();
   
     const titulo = document.getElementById("titulo").value;
+    const descricao = document.getElementById("descricao").value;
+    const prazo = document.getElementById("prazo").value;
     const valor = parseFloat(document.getElementById("valorMeta").value);
     const data = document.getElementById("dataLimite").value;
   
-    const meta = { titulo, valor, data };
+    const meta = { 
+      titulo, 
+      descricao,
+      prazo,
+      valor, 
+      data 
+    };
   
     let metas = JSON.parse(localStorage.getItem("metas")) || [];
     metas.push(meta);
@@ -63,16 +80,23 @@ function salvarTransacao(event) {
   
   // Carregar metas
   function carregarMetas() {
-    const lista = document.getElementById("listaMetas");
-    if (!lista) return;
-  
-    const metas = JSON.parse(localStorage.getItem("metas")) || [];
-    lista.innerHTML = "";
-  
+    const tabela = document.querySelector("#tabelaMetas tbody");
+    if (!tabela) return;
+
+   const metas = JSON.parse(localStorage.getItem("metas")) || [];
+    tabela.innerHTML = "";
+
     metas.forEach(meta => {
-      const li = document.createElement("li");
-      li.textContent = `${meta.titulo} - R$ ${meta.valor.toFixed(2)} até ${meta.data}`;
-      lista.appendChild(li);
-    });
-  }
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${meta.titulo}</td>
+        <td>${meta.descricao || "-"}</td>
+        <td>${meta.prazo || "-"}</td>
+        <td>R$ ${meta.valor.toFixed(2)}</td>
+        <td>${meta.data}</td>
+      `;
+      tabela.appendChild(tr);
+      });
+}
+
   
