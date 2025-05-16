@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Metas Financeiras</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Metas Financeiras</h1>
+    <nav>
+      <a href="../index.html">Dashboard</a> |
+      <a href="cadastro.html">Cadastrar</a> |
+      <a href="metas.html">Metas</a> |
+      <a href="calculadora.html">Calculadora</a>
+    </nav>
+  </header>
+
+  <main class="main-form">
+    <div class="form-container">      
+      <form onsubmit="salvarMeta(event)">
+        <label>Título:</label>
+        <input type="text" id="titulo" required>
+
+        <label>Descrição (opcional):</label>
+        <input type="text" id="descricao">
+
+        <label>Prazo:</label>
+        <select id="prazo" required>
+          <option value="curto">Curto prazo</option>
+          <option value="medio">Médio prazo</option>
+          <option value="longo">Longo prazo</option>
+        </select>
+  
+        <label>Valor (R$):</label>
+        <input type="number" id="valorMeta" required step="0.01">
+  
+        <label>Data Limite:</label>
+        <input type="date" id="dataLimite" required>
+  
+        <button type="submit">Salvar Meta</button>
+        
+      </form>        
+    </div>
+
+    <div class="metasContainer">
+      <h2>Metas Salvas</h2>
+      <table id="tabelaMetas">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Prazo</th>
+            <th>Valor</th>
+            <th>Data limite</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+    
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script>    
+    carregarMetas();
+  </script>
+
+</body>
+
+</html>

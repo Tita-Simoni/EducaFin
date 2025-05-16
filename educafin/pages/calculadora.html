@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de juros</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+  <header>
+    <h1>Calculadora de Juros</h1>
+    <nav>
+      <a href="../index.html">Dashboard</a> |
+      <a href="cadastro.html">Cadastrar</a> |
+      <a href="metas.html">Metas</a> |
+      <a href="calculadora.html">Calculadora</a>
+    </nav>
+  </header>
+
+  <main class="main-form">
+    <!-- Menu de seleção -->
+    <div class="menu-calculadora">
+      <button class="aba-menu ativo" onclick="mostrarFormulario('investimento')">Simulador de Investimento</button>
+      <button class="aba-menu" onclick="mostrarFormulario('compras')">Simulador de Compras</button>
+    </div>
+
+    <!-- Formulário: Simulador de Investimento -->
+    <div id="form-investimento" class="bloco-simulador ativo">
+      <div class="form-left">
+        <form id="formJuros">
+          <label for="valorInicial">Valor inicial para investir (R$):</label>
+          <input type="number" id="valorInicial" required>
+
+          <label for="aplicacaoMensal">Aplicação Mensal (R$):</label>
+          <input type="number" id="aplicacaoMensal" required>
+
+          <label for="tempoMeses">Tempo em meses:</label>
+          <input type="number" id="tempoMeses" required>
+
+          <div class="cdi-info">
+            <p class="selic-titulo">Taxa de Referência Atual</p>
+            <p class="selic">CDI / SELIC (08/05/2025)</p>
+            <p class="selic">14,75% ao ano</p>
+          </div>
+
+          <label for="taxa">Rentabilidade ao ano (%):</label>
+          <input type="number" id="taxa" step="0.01" inputmode="decimal" required>
+
+          <button type="submit">Simular</button>
+        </form>
+      </div>
+
+      <div id="resultadosInvestimento" class="bloco-resultado" style="display: none;">
+        <div class="cards-resultado">
+          <div class="card-item">
+            <h4>Valor total final</h4>
+            <p id="resTotalFinal">R$ 0,00</p>
+          </div>
+          <div class="card-item">
+            <h4>Valor total investido</h4>
+            <p id="resTotalInvestido">R$ 0,00</p>
+          </div>
+          <div class="card-item">
+            <h4>Total em juros</h4>
+            <p id="resTotalJuros">R$ 0,00</p>
+          </div>        
+        </div>
+        <canvas id="graficoInvestimento" height="100"></canvas>
+      </div>      
+    
+    </div>    
+
+
+    <!-- Formulário: Simulador de Compras/Empréstimos -->
+    <div id="form-compras" class="bloco-simulador">
+      <div class="form-left">
+        <form id="formCompras">
+          <label for="valorCompra">Valor da Compra ou Dívida (R$):</label>
+          <input type="number" id="valorCompra" required>
+
+          <label for="parcelas">Número de Parcelas (ou meses a pagar):</label>
+          <input type="number" id="parcelas" required>
+
+          <label for="taxaMensal">Taxa de Juros ao mês (%):</label>
+          <input type="number" id="taxaMensal" step="0.01" inputmode="decimal" required>
+
+          <label>Tipo de Juros:</label>
+          <select id="juros">
+            <option>Simples</option>
+            <option>Composto</option>            
+          </select>
+
+          <button type="submit">Calcular</button>
+        </form>
+      </div>
+
+      <div class="bloco-resultado" id="resultadoCompras" style="display: none;">
+        <div class="cards-resultado">
+          <div class="card-item">
+            <h4>Total a Pagar</h4>
+            <p id="resTotalCompra">R$ 0,00</p>
+          </div>
+          <div class="card-item">
+            <h4>Total em Juros</h4>
+            <p id="resJurosCompra">R$ 0,00</p>
+          </div>
+          <div class="card-item">
+            <h4>Valor por Parcela</h4>
+            <p id="resParcelaCompra">R$ 0,00</p>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/script.js"></script>
+
+</body>
+</html>
