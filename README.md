@@ -18,7 +18,7 @@ O Educafin é uma aplicação web simples para controle financeiro pessoal. Perm
 - localStorage
 - Chart.js (para gráficos)
 
-## Como Usar
+## Como Executar o Projeto
 
 1. Clone o repositório
 2. Abra o arquivo `index.html` no navegador
@@ -32,6 +32,14 @@ O Educafin é uma aplicação web simples para controle financeiro pessoal. Perm
 - `pages/calculadora.html` — com simuladores financeiros
 - `js/script.js` — lógica da aplicação
 - `style.css` — estilos da interface
+
+## Colaboradores
+
+- Cintia Simoni
+- Josias Aparecido Da Silva
+- Marcos Vinicius Araujo Santana
+- Newton Silvestre De Mello
+- Sandra Larissa Marques Couto
 
 ---
 
