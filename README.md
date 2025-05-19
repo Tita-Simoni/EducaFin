@@ -35,11 +35,11 @@ O Educafin é uma aplicação web simples para controle financeiro pessoal. Perm
 
 ## Colaboradores
 
-- Cintia Simoni
-- Josias Aparecido da Silva
-- Marcos Vinicius Araujo Santana
-- Newton Silvestre De Mello
-- Sandra Larissa Marques Couto
+- Cintia Simoni;
+- Josias Aparecido da Silva;
+- Marcos Vinicius Araujo Santana;
+- Newton Silvestre De Mello;
+- Sandra Larissa Marques Couto.
 
 ---
 
